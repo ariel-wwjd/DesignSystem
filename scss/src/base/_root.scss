@@ -1,0 +1,36 @@
+:root {
+  // css variables are not fully compatible with sass variables
+  // this is why we use #{} to make sure it will work
+  --dse-body-text-color: #{$dark};
+  --dse-body-bg-color: #{$white};
+
+  --dse-button-primary-color: #{$white};
+  --dse-button-primary-bg: #{$green};
+  --dse-button-primary-bg-hover: #{$green-light};
+
+  --dse-button-secondary-color: #{$white};
+  --dse-button-secondary-bg: #{$dark};
+
+  --dse-form-color: #{$dark};
+  --dse-form-background: #{$white};
+  --dse-form-error-color: #{$red};
+  --dse-form-error-border: #{$red};
+  --dse-form-border-focus-color: #{$green};
+
+  --dse-body-font-size: #{$font-size-base};
+  --dse-body-font-weight: #{$font-weight-normal};
+
+  --dse-heading1-font-size: #{$heading-1};
+  --dse-heading2-font-size: #{$heading-2};
+  --dse-heading3-font-size: #{$heading-3};
+  --dse-heading4-font-size: #{$heading-4};
+  --dse-heading5-font-size: #{$heading-5};
+  --dse-heading6-font-size: #{$heading-6};
+
+  --dse-heading1-font-weight: #{$font-weight-medium};
+  --dse-heading2-font-weight: #{$font-weight-medium};
+  --dse-heading3-font-weight: #{$font-weight-medium};
+  --dse-heading4-font-weight: #{$font-weight-normal};
+  --dse-heading5-font-weight: #{$font-weight-normal};
+  --dse-heading6-font-weight: #{$font-weight-light};
+}

@@ -1,0 +1,30 @@
+/*=============================================
+=               Margin Mixins                 =
+=============================================*/
+
+/**
+ *
+ * Helpful reusable function-like things that will be used to implement
+ * styles for components.
+ *
+ */
+
+@mixin margin($space) {
+  margin: map-get($map: $spacing, $key: $space);
+}
+
+@mixin margin-top($space) {
+  margin-top: map-get($map: $spacing, $key: $space);
+}
+
+@mixin margin-left($space) {
+  margin-left: map-get($map: $spacing, $key: $space);
+}
+
+@mixin margin-right($space) {
+  margin-right: map-get($map: $spacing, $key: $space);
+}
+
+@mixin margin-bottom($space) {
+  margin-bottom: map-get($map: $spacing, $key: $space);
+}

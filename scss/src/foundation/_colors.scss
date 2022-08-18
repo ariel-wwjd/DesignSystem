@@ -1,0 +1,44 @@
+/*=============================================
+=            Foundation - colors              =
+=============================================*/
+
+/**
+ * This file defines the actual colors that will be used for styling. They will default to the palette
+ * we defined in the _variable.scss file. This is our default palette, and devs can override this
+ * with their own variables.
+ */
+
+/*=============================================
+=           Global Trext Colors               =
+=============================================*/
+// this is a variable and in ca is not set it will be a dark by default
+$body-text-color: var(--dse-body-text-color, $dark) !default;
+$body-background-color: var(--dse-body-background-color, $white) !default;
+
+/*=====  End of Global Trext Colors  ======*/
+
+/*=============================================
+=                   Buttons                   =
+=============================================*/
+$button-primary-color: var(--dse-button-primary-color, $white) !default;
+$button-primary-background: var(
+  --dse-button-primary-background,
+  $green
+) !default;
+$button-primary-background-hover: var(
+  --dse-button-primary-background-hover,
+  $green-light
+) !default;
+
+/*=====  End of Buttons  ======*/
+
+/*=============================================
+=                   Forms                     =
+=============================================*/
+$form-color: var(--dse-form-color, $dark) !default;
+$form-background: var(--dse-form-background, $white) !default;
+$form-error-color: var(--dse-form-error-color, $red) !default;
+$form-error-border: var(--dse-form-error-border, $red) !default;
+$form-border-focus-color: var(--dse-form-border-focus-color, $green) !default;
+
+/*=====  End of Forms  ======*/

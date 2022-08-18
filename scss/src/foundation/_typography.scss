@@ -1,0 +1,58 @@
+/*=============================================
+=        Foundation - Typography              =
+=============================================*/
+
+/**
+ * This file defines the default font sizes to be used on headings and texts. The defaults come
+ * from the palette defined in _variables.scss.
+ */
+
+/*=============================================
+=               Body Font Sizes               =
+=============================================*/
+$body-font-size: var(--dse-body-font-size, $font-size-sm) !default;
+$body-font-weight: var(--dse-body-font-weight, $font-weight-normal) !default;
+
+/*=====  End of Body Font Sizes  ======*/
+
+/*=============================================
+=             Heading Font Sizes              =
+=============================================*/
+$heading-1-font-size: var(--dse-heading1-font-size, $heading-1) !default;
+$heading-2-font-size: var(--dse-heading2-font-size, $heading-2) !default;
+$heading-3-font-size: var(--dse-heading3-font-size, $heading-3) !default;
+$heading-4-font-size: var(--dse-heading4-font-size, $heading-4) !default;
+$heading-5-font-size: var(--dse-heading5-font-size, $heading-5) !default;
+$heading-6-font-size: var(--dse-heading6-font-size, $heading-6) !default;
+
+/*=====  End of Heading Font Sizes  ======*/
+
+/*=============================================
+=            Heading Font Weights            =
+=============================================*/
+$heading-1-font-weight: var(
+  --dse-heading1-font-weight,
+  $font-weight-black
+) !default;
+$heading-2-font-weight: var(
+  --dse-heading2-font-weight,
+  $font-weight-semibold
+) !default;
+$heading-3-font-weight: var(
+  --dse-heading3-font-weight,
+  $font-weight-bold
+) !default;
+$heading-4-font-weight: var(
+  --dse-heading4-font-weight,
+  $font-weight-medium
+) !default;
+$heading-5-font-weight: var(
+  --dse-heading5-font-weight,
+  $font-weight-normal
+) !default;
+$heading-6-font-weight: var(
+  --dse-heading6-font-weight,
+  $font-weight-light
+) !default;
+
+/*=====  End of Heading Font Weights  ======*/
