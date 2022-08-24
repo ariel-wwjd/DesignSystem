@@ -1,0 +1,25 @@
+{
+  "name": "@design-system/core",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ariel-wwjd/DesignSystem.git",
+  "author": "Ariel Arias <arielwwjd@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^5.4.3"
+  },
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "playgrounds/*"
+    ],
+    "nohoist": [
+      "**/normalize-scss"
+    ]
+  },
+  "scripts": {
+    "build": "yarn lerna run build",
+    "dev": "yarn lerna run dev"
+  }
+}

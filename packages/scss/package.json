@@ -1,5 +1,5 @@
 {
-  "name": "@ds.e/scss",
+  "name": "@design-system/scss",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -8,9 +8,13 @@
   },
   "scripts": {
     "lint": "stylelint './**/*.scss'",
-    "lint:fix": "yarn lint --fix"
+    "lint:fix": "yarn lint --fix",
+    "build": "node src/scripts/build.js",
+    "dev": "nodemon --watch src --exec yarn build -e scss"
   },
   "devDependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.19",
     "prettier": "^2.7.1",
     "stylelint": "^14.10.0",
     "stylelint-config-prettier": "^9.0.3",
