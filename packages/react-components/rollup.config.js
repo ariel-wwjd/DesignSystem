@@ -3,7 +3,8 @@ import Ts from 'rollup-plugin-typescript2';
 export default {
   input: [
     'src/components.ts',
-    // 'src/atoms/Button/index.ts',
+    'src/atoms/Color/index.ts',
+    'src/atoms/Margin/index.ts',
   ],
   output: {
     dir: 'lib',
@@ -12,5 +13,5 @@ export default {
   },
   plugins: [Ts()],
   preserveModules: true,
-  external: ['react-components'],
+  external: ['react-components', '@design-system/foundation'],
 };
