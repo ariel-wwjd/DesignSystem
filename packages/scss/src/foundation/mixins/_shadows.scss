@@ -1,0 +1,14 @@
+/*=============================================
+=              Shadows Mixins                 =
+=============================================*/
+
+/**
+ *
+ * Helpful reusable function-like things that will be used to implement
+ * styles for components.
+ *
+ */
+
+ @mixin shadow($size) {
+   box-shadow: map-get($map: $shadows, $key: $size);
+ };

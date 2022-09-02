@@ -8,6 +8,13 @@
  */
 
 /*=============================================
+=               Body Font Family               =
+=============================================*/
+$body-font-family: var(--dse-body-font-family, $playfair) !default;
+
+/*=====  End of Body Font Family  ======*/
+
+/*=============================================
 =               Body Font Sizes               =
 =============================================*/
 $body-font-size: var(--dse-body-font-size, $font-size-sm) !default;

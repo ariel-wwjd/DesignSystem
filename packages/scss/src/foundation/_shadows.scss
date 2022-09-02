@@ -1,0 +1,17 @@
+/*=============================================
+=            Foundation - Shadows              =
+=============================================*/
+
+/**
+ * This file defines the actual shadow that will be used for styling. They will default to the palette
+ * we defined in the _variable.scss file. This is our default palette, and devs can override this
+ * with their own variables.
+ */
+
+/*=============================================
+=           Global Trext Shadows               =
+=============================================*/
+// this variable when not set it will be a dark by default
+$body-base-shadow: var(--dse-body-base-shadow, map-get) !default;
+
+/*=====  End of Global Trext Shadows  ======*/

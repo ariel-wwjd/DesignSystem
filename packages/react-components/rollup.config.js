@@ -5,6 +5,7 @@ export default {
     'src/components.ts',
     'src/atoms/Color/index.ts',
     'src/atoms/Margin/index.ts',
+    'src/molecules/Select/index.ts',
   ],
   output: {
     dir: 'lib',

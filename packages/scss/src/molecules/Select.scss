@@ -1,0 +1,52 @@
+@import 'foundation//all';
+
+.dse-select {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &__label {
+    @include padding('xs');
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid $form-border-color;
+    background-color: $form-background-color;
+    font-family: $body-font-family;
+    cursor: pointer;
+  }
+  &__caret {
+    transition: transform 250ms ease;
+    &--open {
+      transform: rotate(180deg);
+    }
+    &--close{
+      transform: rotate(0deg);
+    }
+  }
+  &__overlay {
+    @include padding('none');
+    @include margin('none');
+    @include shadow('base');
+    border: 1px solid $form-border-color;
+    background-color: $form-background-color;
+    z-index: 99;
+    list-style-type: 'none';
+    position: absolute;
+    width: 100%;
+  }
+  &__option {
+    @include padding('xs');
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    // width: 100%;
+  }
+  &__option:hover {
+    background-color: $select-option-background-hover;
+  }
+  &__option--selected {
+    background-color: $select-option-selected-background;
+    color: $select-option-selected-text-color;
+  }
+}
