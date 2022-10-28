@@ -1,17 +1,28 @@
 import { Spacing } from '@design-system/foundation';
+import { ColorProps, OverrideProps } from './types'; 
 
-interface ColorProps {
-  hexCode: string;
-  width?: keyof typeof Spacing;
-  height?: keyof typeof Spacing;
-}
-
-const Color: React.FC<ColorProps> = ({ hexCode, width = Spacing.sm, height = Spacing.sm }) => {
+const Color: React.FC<ColorProps> = ({
+    hexCode = '#bbbbbb',
+    width = Spacing.sm,
+    height = Spacing.sm,
+    overrideProps = {},
+  }) => {
   const classNames = `dse-width-${width} dse-height-${height}`;
+  const renderProps = {
+    recommendedProps: (overrideProps: OverrideProps) => ({
+      className: classNames,
+      ...overrideProps,
+      style: {
+        backgroundColor: hexCode, 
+        ...overrideProps?.style,
+      },
+    })
+  }
+
   return (
-    <div className={classNames} style={{
-      backgroundColor: hexCode, 
-    }}></div>
+    <div
+      {...renderProps.recommendedProps(overrideProps)}
+    ></div>
   )
 }
 

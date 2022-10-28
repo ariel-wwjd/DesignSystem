@@ -78,11 +78,11 @@ $font-size-lg: 1.125rem; // 18px
 $font-size-xl: 1.5rem; // 24px
 
 $fontSizes: (
-  xs: 0.75rem,
-  sm: 0.875rem,
-  base: 1rem,
-  lg: 1.125rem,
-  xl: 1.5rem,
+  xs: 0.75rem, // 12px
+  sm: 0.875rem, // 14px
+  base: 1rem, // 16px
+  lg: 1.125rem, // 18px
+  xl: 1.5rem, // 24px
 );
 
 /* Heading font sizes */
@@ -101,6 +101,16 @@ $font-weight-semibold: 600;
 $font-weight-bold: 700;
 $font-weight-extrabold: 800;
 $font-weight-black: 900;
+
+$fontWeights: (
+  light: 300,
+  normal: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800,
+  black: 900,
+);
 
 /*=====  End of Typography  ======*/
 

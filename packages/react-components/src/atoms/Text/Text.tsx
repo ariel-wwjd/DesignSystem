@@ -1,15 +1,27 @@
-import { FontSize } from '@design-system/foundation';
+import { TextProps, OverrideProps } from "./types";
 
-interface TextProps {
-  size?: keyof typeof FontSize;
-  children: JSX.Element | JSX.Element[] | string | string[];
-}
-
-const Text: React.FC<TextProps> = ({ size, children }) => {
-  const classNames = `dse-text dse-text-${size}`;
+const Text: React.FC<TextProps> = ({
+  children,
+  size = 'base',
+  weight = 'normal',
+  textColor = '#000000bab',
+  overrideProps = {},
+}) => {
+  const classNames = `dse-text dse-text-${size} dse-text-${String(weight)}`;
   
+  const renderProps = {
+    recommendedProps: (overrideProps: OverrideProps) => ({
+      className: classNames,
+      ...overrideProps,
+      style: {
+        color: textColor,
+        ...overrideProps?.style,
+      },
+    })
+  }
+
   return (
-    <p className={classNames}>{children}</p>
+    <p {...renderProps.recommendedProps(overrideProps)}>{children}</p>
   );
 }
 

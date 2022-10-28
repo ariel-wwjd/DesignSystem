@@ -1,15 +1,24 @@
-import { Spacing, Side } from '@design-system/foundation';
+import { MarginProps, OverrideProps } from "./types";
 
-interface MarginProps {
-  size?: keyof typeof Spacing;
-  side?: keyof typeof Side;
-  children: JSX.Element | JSX.Element[] | string | string[];
-}
-
-const Margin: React.FC<MarginProps> = ({ size = 'xxxs', side, children }) => {
+const Margin: React.FC<MarginProps> = ({
+  size = 'xxxs',
+  side, children,
+  overrideProps = {},
+}) => {
   const classNames = side? `dse-margin-${String(side)}-${size}` : `dse-margin-${size}`;
+  
+  const renderProps = {
+    recommendedProps: (overrideProps: OverrideProps) => ({
+      className: classNames,
+      ...overrideProps,
+      style: {
+        ...overrideProps?.style,
+      },
+    })
+  }
+  
   return (
-    <div className={classNames} >
+    <div {...renderProps.recommendedProps(overrideProps)}>
       {children}
     </div>
   )

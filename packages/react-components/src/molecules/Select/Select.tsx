@@ -1,25 +1,20 @@
-import { useEffect, useRef, useState } from "react";
+import { createRef, KeyboardEventHandler, useEffect, useRef, useState } from "react";
+import { KEY_CODES, getNextOptionIndex, getPreviousOptionIndex } from "./utilities";
+import { SelectOption, SelectProps } from "./types";
 import Text from '../../atoms/Text'
-
-interface SelectOption {
-  label: string;
-  value: string;
-}
-
-interface SelectProps {
-  onOptionSelect?: (option: SelectOption, optionIndex: number) => void;
-  options?: SelectOption[];
-  label?: string;
-}
+import SelectItem from "../SelectItem";
 
 const Select: React.FC<SelectProps> = ({
   options = [],
   label = 'Select an option',
   onOptionSelect: handler,
+  renderOption,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [overlayTop, setOverlayTop] = useState<number>(0);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [hightlightedIndex, setHightlightedIndex] = useState<number | null>(null);
+  const [optionsRefs, setOptionRefs] = useState<React.RefObject<HTMLLIElement>[]>([]);
 
   const labelRef = useRef<HTMLButtonElement>(null);
 
@@ -28,6 +23,20 @@ const Select: React.FC<SelectProps> = ({
   useEffect(() => {
     setOverlayTop((labelRef.current?.offsetHeight || 0) + 10)
   }, [labelRef.current?.offsetHeight]);
+
+  useEffect(() => {
+    setOptionRefs(options.map((_) => (createRef<HTMLLIElement>())))
+  }, [options]);
+
+  useEffect(() => {
+    if (hightlightedIndex !== null && isOpen) {
+      const ref = optionsRefs[hightlightedIndex];
+
+      if (ref && ref.current) {
+        ref.current.focus();
+      }
+    }
+  }, [isOpen, hightlightedIndex, optionsRefs]);
   
   const onOptionSelect = (option: SelectOption, optionIndex: number) => {
     if (handler) {
@@ -41,10 +50,45 @@ const Select: React.FC<SelectProps> = ({
   const onLabelClick = () => {
     setIsOpen(!isOpen);
   };
+
+  const highlightOption = (optionIndex: number | null) => {
+    setHightlightedIndex(optionIndex);
+  };
+
+  const onButtonKeyDown: KeyboardEventHandler = (event) => {
+    event.preventDefault();
+    if ([KEY_CODES.ENTER, KEY_CODES.SPACE, KEY_CODES.ARROW_DOWN].includes(event.code)) {
+      setIsOpen(true);
+      highlightOption(0);
+    }
+  };
+
+  const onOptionDown: KeyboardEventHandler = (event) => {
+    switch (event.code) {
+      case KEY_CODES.ESCAPE:
+        setIsOpen(false);
+        break;
+      case KEY_CODES.ARROW_DOWN:
+        highlightOption (getNextOptionIndex(hightlightedIndex, options));
+        break;
+      case KEY_CODES.ARROW_UP:
+        highlightOption(getPreviousOptionIndex(hightlightedIndex, options));
+        break;
+      case KEY_CODES.ENTER:
+        onOptionSelect(options[hightlightedIndex!], hightlightedIndex!);
+        break;
+      default:
+        break;
+    } 
+  };
  
-  return (  
+  return (    
     <div className={classNames} >
       <button
+        onKeyDown={onButtonKeyDown}
+        aria-haspopup={true}
+        aria-expanded={isOpen ? true : undefined}
+        aria-controls='dse-select-list'
         className="dse-select__label"
         onClick={() => (onLabelClick())}
         ref={labelRef}
@@ -65,38 +109,23 @@ const Select: React.FC<SelectProps> = ({
       </button>
     {
       isOpen ? (
-        <ul style={{ top: overlayTop }} className="dse-select__overlay">
+        <ul role='menu' style={{ top: overlayTop }} className="dse-select__overlay" id='dse-select-list' >
           {options.map((option, optionIndex) => {
-            const isSelected = selectedIndex === optionIndex;
             return (
-              <li
-                className={`dse-select__option ${isSelected
-                  ? 'dse-select__option--selected'
-                  : ''}`}
-                key={option.value}
-                onClick={() => (onOptionSelect(option, optionIndex))}
-              >
-                <Text>{option.label}</Text>
-                {
-                  isSelected
-                  ? (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none" viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-6 h-6"
-                        width="1rem"
-                        height="1rem"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                      </svg>
-                    )
-                  : null
-                }
-              </li>
+              <SelectItem 
+                isSelected={selectedIndex === optionIndex}
+                isHightlighted={hightlightedIndex === optionIndex}
+                ref={optionsRefs[optionIndex]}
+                option={option}
+                optionIndex={optionIndex}
+                onOptionDown={onOptionDown}
+                highlightOption={highlightOption}
+                onOptionSelect={onOptionSelect}
+                renderOption={renderOption}
+              />
             )
-        })}
+          }
+        )}
       </ul>
       ) : null
     }

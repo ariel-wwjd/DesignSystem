@@ -40,9 +40,8 @@
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-    // width: 100%;
   }
-  &__option:hover {
+  &__option--hightlighted {
     background-color: $select-option-background-hover;
   }
   &__option--selected {
