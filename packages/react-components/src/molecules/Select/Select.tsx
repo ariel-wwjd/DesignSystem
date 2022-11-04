@@ -92,6 +92,7 @@ const Select: React.FC<SelectProps> = ({
         className="dse-select__label"
         onClick={() => (onLabelClick())}
         ref={labelRef}
+        data-testid='DseSelectButton'
       >
         <Text>{selectedIndex === null ? label : options[selectedIndex].label}</Text>
         <svg

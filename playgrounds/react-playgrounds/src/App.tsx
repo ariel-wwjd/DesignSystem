@@ -52,6 +52,9 @@ function App() {
       </Margin>
       <br />
       <br />
+      <Select  options={options} />
+      <br />
+      <br />
       <Select options={options} renderOption={(
           { option, getOptionRecommendedProps }: 
           {option: {label: string}, getOptionRecommendedProps: any}
@@ -62,12 +65,21 @@ function App() {
           </p>
         )
       } />
-      <Select options={options} renderOption={(
+      {/* <Select options={options} renderOption={(
         { option, getOptionRecommendedProps }:
         {option: {label: string}, getOptionRecommendedProps: any}
       ) => (
         <p {...getOptionRecommendedProps({})}>{option.label}</p>
-      )} />
+      )} /> */}
+      <br />
+      <br />
+      {/* <Select options={options} renderOption={(
+        { option, getOptionRecommendedProps}:
+        {option: {label: string}, getOptionRecommendedProps: any}
+        ) => {
+          return <li data-testid="test" {...getOptionRecommendedProps()}>{option.label}</li>
+        }}
+      /> */}
       <br />
       <br />
       <Text

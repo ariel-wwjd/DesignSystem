@@ -1,5 +1,5 @@
 import { SelectItemProps } from "./types";
-import Text from '../../atoms/Text'
+import Text from '../../atoms/Text';
 
 const SelectItem: React.FC<SelectItemProps> = ({
   isSelected,
@@ -13,6 +13,8 @@ const SelectItem: React.FC<SelectItemProps> = ({
   renderOption,
 }) => {
   const renderOptionProps = {
+    key: option.value,
+    ref,
     option,
     isSelected,
     getOptionRecommendedProps: (overrideProps: any = {}) => ({
@@ -28,19 +30,20 @@ const SelectItem: React.FC<SelectItemProps> = ({
         isSelected ? 'dse-select__option--selected' : ''} ${
         isHightlighted ? 'dse-select__option--hightlighted' : ''
         }`,
-      ...overrideProps,
       key: option.value,
       onClick: () => (onOptionSelect(option, optionIndex)),
+      ...overrideProps,
     }),
   };
 
   if (renderOption) {
     renderOption(renderOptionProps);
   }
-
+  
   return (
     <li
       {...renderOptionProps.getOptionRecommendedProps()}
+      key={renderOptionProps.option.value}
     >
       <Text>{option.label}</Text>
       {
