@@ -2,7 +2,7 @@ import { Spacing } from '@design-system/foundation';
 
 interface OverrideProps {
   className?: string;
-  style?: { backgroundColor: string };
+  style?: {};
 }
 
 interface ColorProps {
