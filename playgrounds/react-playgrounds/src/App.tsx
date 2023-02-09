@@ -1,5 +1,6 @@
 import { Spacing, FontSize, FontWeight } from '@design-system/foundation';
-import { Color, Text, Margin, Select } from '@design-system/react-components';
+// import { Color, Text, Margin, Select } from '@design-system/react-components';
+import { Button } from '@design-system/components';
 import '@design-system/scss/lib/Utilities.css';
 import '@design-system/scss/lib/Text.css';
 import '@design-system/scss/lib/Margin.css';
@@ -24,21 +25,34 @@ function App() {
 
   return (
     <div className="App">
-      <Color hexCode="#6273a0" width={Spacing.lg} height={Spacing.lg} />
+      {/* test new library */}
+      <Button
+        backgroundColor='black'
+        color='white'
+        style={{ padding: '30px' }}
+      >
+        New Button
+      </Button>
+
+
+      {/* <Color hexCode="#6273a0" width={Spacing.lg} height={Spacing.lg} /> */}
       <br />
-      <Color
+      {/* <Color
         hexCode="#d8ee5c"
         width={Spacing.lg}
         height={Spacing.lg}
         overrideProps={{ style: { width: '200px' }}}
-      />
+      /> */}
       <br />
-      <Color 
+      {/* <Color 
         width={Spacing.md}
         height={Spacing.md}
         overrideProps={{ style: { backgroundColor: '#70a062' }}}
-      />
-      <br />
+      /> */}
+
+
+
+      {/* <br />
        <Margin size="lg">
         <Text size={FontSize.lg}>Test Margin Component</Text>
       </Margin>
@@ -64,7 +78,10 @@ function App() {
             })}>{option.label}
           </p>
         )
-      } />
+      } /> */}
+
+
+
       {/* <Select options={options} renderOption={(
         { option, getOptionRecommendedProps }:
         {option: {label: string}, getOptionRecommendedProps: any}
@@ -82,7 +99,7 @@ function App() {
       /> */}
       <br />
       <br />
-      <Text
+      {/* <Text
         size={FontSize.sm}
         overrideProps={{ style: { color: '#70a062', fontWeight: '900' }}}
       >Test Text Component</Text>
@@ -93,6 +110,11 @@ function App() {
         textColor='#d864e7'
         overrideProps={{ style: { color: '#1fb1b1' }}}
       >Test Text Component</Text>
+      <Text
+      
+      >
+        Test TTTTTTTTTTTTTTTTTTTTTTTTTTT
+      </Text> */}
     </div>
   );
 }

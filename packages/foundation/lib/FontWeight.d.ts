@@ -1,10 +1,10 @@
 declare const _default: Readonly<{
-    light: string;
-    normal: string;
-    medium: string;
-    semibold: string;
-    bold: string;
-    extrabold: string;
-    black: string;
+    light: "light";
+    normal: "normal";
+    medium: "medium";
+    semibold: "semibold";
+    bold: "bold";
+    extrabold: "extrabold";
+    black: "black";
 }>;
 export default _default;

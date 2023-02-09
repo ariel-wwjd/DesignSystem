@@ -3,7 +3,7 @@ import Text from './Text';
 import '@design-system/scss/lib/Text.css';
 
 const componentName = {
-  title: 'Text',
+  title: 'Atoms/Text',
   component: Text,
   args: {}
 };

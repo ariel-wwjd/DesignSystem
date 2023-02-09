@@ -3,7 +3,7 @@ import Margin from './Margin';
 import '@design-system/scss/lib/Margin.css';
 
 const componentName = {
-  title: 'Margin',
+  title: 'Atoms/Margin',
   component: Margin,
   args: {}
 };

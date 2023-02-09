@@ -18,7 +18,7 @@ const options = [
 ];
 
 const componentName = {
-  title: 'Select',
+  title: 'Molecules/Select',
   component: Select,
   argTypes: {},
   args: {

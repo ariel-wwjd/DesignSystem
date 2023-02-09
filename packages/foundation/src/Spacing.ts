@@ -1,4 +1,15 @@
-const spaces = {
+const spaces: {
+  none: 'none',
+  xxxs: 'xxxs',
+  xxs: 'xxs',
+  xs: 'xs',
+  sm: 'sm',
+  md: 'md',
+  lg: 'lg',
+  xl: 'xl',
+  xxl: 'xxl',
+  xxxl: 'xxxl',
+} = {
   none: 'none', // 0px
   xxxs: 'xxxs', // 4px
   xxs: 'xxs', // 8px
@@ -9,7 +20,7 @@ const spaces = {
   xl: 'xl', // 48px
   xxl: 'xxl', // 72px
   xxxl: 'xxxl', // 96px
-}
+};
 
 // this helps to no override the spaces variable
 export default Object.freeze(spaces);

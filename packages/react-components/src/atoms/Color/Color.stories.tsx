@@ -3,7 +3,7 @@ import Color from './Color';
 import '@design-system/scss/lib/Utilities.css';
 
 const componentName = {
-  title: 'Color',
+  title: 'Atoms/Color',
   component: Color,
   args: {}
 };
