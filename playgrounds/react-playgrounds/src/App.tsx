@@ -1,6 +1,5 @@
 import { Spacing, FontSize, FontWeight } from '@design-system/foundation';
-// import { Color, Text, Margin, Select } from '@design-system/react-components';
-import { Button } from '@design-system/components';
+import { Button, Color, Margin, Text, Select, Counter } from '@design-system/components';
 import '@design-system/scss/lib/Utilities.css';
 import '@design-system/scss/lib/Text.css';
 import '@design-system/scss/lib/Margin.css';
@@ -22,10 +21,8 @@ function App() {
     },
   ];
 
-
   return (
     <div className="App">
-      {/* test new library */}
       <Button
         backgroundColor='black'
         color='white'
@@ -34,27 +31,29 @@ function App() {
         New Button
       </Button>
 
-
-      {/* <Color hexCode="#6273a0" width={Spacing.lg} height={Spacing.lg} /> */}
+      <Margin>
+        <Color hexCode="#6273a0" width={Spacing.lg} height={Spacing.lg} />
+      </Margin>
       <br />
-      {/* <Color
-        hexCode="#d8ee5c"
-        width={Spacing.lg}
-        height={Spacing.lg}
+      <Color
+        hexCode="#5637aa"
+        width={Spacing.xl}
+        height={Spacing.xxl}
         overrideProps={{ style: { width: '200px' }}}
-      /> */}
+      />
       <br />
-      {/* <Color 
+      <Color
+        hexCode="#1fca28"
         width={Spacing.md}
         height={Spacing.md}
         overrideProps={{ style: { backgroundColor: '#70a062' }}}
-      /> */}
+      />
 
 
 
-      {/* <br />
-       <Margin size="lg">
-        <Text size={FontSize.lg}>Test Margin Component</Text>
+      <br />
+       <Margin size="xxxl">
+        <Text size={FontSize.sm}>Test Margin Component</Text>
       </Margin>
       <br />
       <Margin side="left" size="lg">
@@ -64,6 +63,24 @@ function App() {
        <Margin size="lg" overrideProps={{ style: { backgroundColor: '#70a062', margin: '2px' } }}>
         <Text size={FontSize.lg}>Test Margin Component</Text>
       </Margin>
+      <br />
+      <br />
+      <Text
+        size={FontSize.sm}
+        overrideProps={{ style: { color: '#70a062', fontWeight: '900' }}}
+      >Test Text Component</Text>
+      <br />
+      <Text
+        size={FontSize.xl}
+        weight={FontWeight.bold}
+        textColor='#d864e7'
+        overrideProps={{ style: { color: '#1fb1b1' }}}
+      >Test Text Component</Text>
+      <Text
+        textColor='#d864e7'
+      >
+        Test TTTTTTTTTTTTTTTTTTTTTTTTTTT
+      </Text>
       <br />
       <br />
       <Select  options={options} />
@@ -78,43 +95,33 @@ function App() {
             })}>{option.label}
           </p>
         )
-      } /> */}
+      } />
 
 
 
-      {/* <Select options={options} renderOption={(
+      <Select options={options} renderOption={(
         { option, getOptionRecommendedProps }:
         {option: {label: string}, getOptionRecommendedProps: any}
       ) => (
         <p {...getOptionRecommendedProps({})}>{option.label}</p>
-      )} /> */}
+      )} />
       <br />
       <br />
-      {/* <Select options={options} renderOption={(
+      <Select options={options} renderOption={(
         { option, getOptionRecommendedProps}:
         {option: {label: string}, getOptionRecommendedProps: any}
         ) => {
           return <li data-testid="test" {...getOptionRecommendedProps()}>{option.label}</li>
         }}
-      /> */}
+      />
       <br />
       <br />
-      {/* <Text
-        size={FontSize.sm}
-        overrideProps={{ style: { color: '#70a062', fontWeight: '900' }}}
-      >Test Text Component</Text>
-      <br />
-      <Text
-        size={FontSize.xl}
-        weight={FontWeight.bold}
-        textColor='#d864e7'
-        overrideProps={{ style: { color: '#1fb1b1' }}}
-      >Test Text Component</Text>
-      <Text
-      
-      >
-        Test TTTTTTTTTTTTTTTTTTTTTTTTTTT
-      </Text> */}
+
+      <Counter 
+        label='Test Counter'
+        phase={2}
+      />
+
     </div>
   );
 }
