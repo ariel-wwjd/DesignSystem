@@ -1,0 +1,14 @@
+.custom-button {
+  height: 20px;
+  font-size: 14px;
+  background-color: antiquewhite;
+  color: darkslategrey;
+  transition: background-color ease-in-out 1000ms,
+              color ease-in-out 1000ms;
+  border: none;
+}
+
+.custom-button:hover {
+  background-color: gainsboro;
+  color: rgb(0, 52, 196);
+}

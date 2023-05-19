@@ -1,0 +1,13 @@
+@import 'foundation//all';
+
+.dse-button {
+  background-color: black;
+  color: whitesmoke;
+  height: 70px;
+  width: 120px;
+  transition: background-color ease-in-out 150ms;
+}
+
+.dse-button:hover {
+  background-color: rgb(73, 73, 73);
+}

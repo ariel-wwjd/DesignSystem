@@ -1,0 +1,28 @@
+.ds-buttonB {
+  height: 40px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 8px;
+  border: none;
+  padding: 4px 12px;
+}
+
+.button-b-primary {
+  background-color: blue;
+  color: whitesmoke;
+}
+
+.button-b-primary:hover {
+  background-color: rgb(31, 31, 179);
+  color: whitesmoke;
+}
+
+.button-b-secondary {
+  background-color: black;
+  color: whitesmoke;
+}
+
+.button-b-secondary:hover {
+  background-color: rgb(66, 66, 66);
+  color: whitesmoke;
+}

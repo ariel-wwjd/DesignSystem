@@ -1,9 +1,13 @@
 import { Spacing, FontSize, FontWeight } from '@design-system/foundation';
-import { Button, Color, Margin, Text, Select, Counter } from '@design-system/components';
+import { Button, Color, Margin, Text, Select, Counter, ButtonA, ButtonB } from '@design-system/components';
 import '@design-system/scss/lib/Utilities.css';
 import '@design-system/scss/lib/Text.css';
 import '@design-system/scss/lib/Margin.css';
 import '@design-system/scss/lib/Select.css'; 
+import '@design-system/scss/lib/Button.css';
+import '@design-system/scss/lib/ButtonA.css';
+import '@design-system/scss/lib/ButtonB.css';
+import './App-custom-classes.css';
 
 function App() {
   const options = [
@@ -23,10 +27,57 @@ function App() {
 
   return (
     <div className="App">
+      <ButtonA
+        title='SAVE'
+        state='primary'
+        onClick={() => (alert('test first Button A'))}
+        overrideProps={{style: { backgroundColor: '#70a062' }}}
+      />
+      <br />
+      <br />
+      <ButtonA
+        title='SAVE'
+        state='secondary'
+        onClick={() => (alert('test second Button A'))}
+      />
+      <br />
+      <br />
+      <ButtonA
+        title='SAVE'
+        state='secondary'
+        onClick={() => (alert('test second Button A'))}
+        overrideProps={{ className: 'custom-button' }}
+      />
+      <br />
+      <br />
+      <ButtonB
+        title='DELETE'
+        state='primary'
+        onClick={() => { window.alert('Test')}}
+        style={{backgroundColor: '#70a062' }}
+        />
+      <br />
+      <br />
+      <ButtonB
+        title='DELETE'
+        state='secondary'
+        onClick={() => (alert('Test second ButtonB'))}
+      />
+      <br />
+      <br />
+      <ButtonB
+        title='DELETE'
+        state='secondary'
+        onClick={() => (alert('Test second ButtonB'))}
+        className='custom-button'
+      />
+      <br />
+      <br />
       <Button
-        backgroundColor='black'
-        color='white'
-        style={{ padding: '30px' }}
+        // backgroundColor='black'
+        // color='white'
+        // style={{ padding: '30px' }}
+        onClick={() => {window.alert('Test button')}}
       >
         New Button
       </Button>

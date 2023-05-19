@@ -19,4 +19,6 @@ __exportStar(require("./color"), exports);
 __exportStar(require("./margin"), exports);
 __exportStar(require("./text"), exports);
 __exportStar(require("./counter"), exports);
+__exportStar(require("./buttonA"), exports);
+__exportStar(require("./buttonB"), exports);
 //# sourceMappingURL=index.js.map
